@@ -11,7 +11,7 @@ destination = URI.escape(destination)
 
 # Send an HTTP request to the Google Directions API
 url = "http://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}&sensor=false"
-puts url
+
 json_data = open(url).read
 
 # Parse the response string into a Ruby data structure

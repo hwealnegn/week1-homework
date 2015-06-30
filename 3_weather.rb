@@ -15,7 +15,7 @@ json_data = open("http://api.openweathermap.org/data/2.5/weather?q=#{location}&u
 # Parse the response string into a Ruby data structure
 # (You will need to figure out what kind of structure it is)
 data = JSON.parse(json_data)
-puts data
+
 # 1. TO DO:
 # Replace the following 0 with an expression
 # that will extract the temperature
