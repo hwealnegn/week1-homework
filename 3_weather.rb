@@ -4,6 +4,7 @@ require 'json'
 
 # Our classroom location
 location = "5555 South Ellis Avenue, Chicago, Illinois, 60637"
+location = "Chicago, Illinois, 60637" # I also had issues accessing the Open Weather Map API
 
 # Convert to an HTTP-compatible querystring parameter
 location = URI.escape(location)
@@ -14,12 +15,11 @@ json_data = open("http://api.openweathermap.org/data/2.5/weather?q=#{location}&u
 # Parse the response string into a Ruby data structure
 # (You will need to figure out what kind of structure it is)
 data = JSON.parse(json_data)
-
-
+puts data
 # 1. TO DO:
 # Replace the following 0 with an expression
 # that will extract the temperature
-temp = 0
+temp = data["main"]["temp"]
 
 # Output the temperature to the screen
 puts "It is currently #{temp.round(0)}\u00B0 outside."
